@@ -34,30 +34,38 @@ Hardware – PCs, Cyclone II , USB flasher
 **Program:**
 
 /* Program to implement the given logic function and to verify its operations in quartus using Verilog programming. 
-
-Developed by:AISHWARYA V RegisterNumber:212223220003
-
-program
-module combinationalcircuit(A,B,C,D,F1);
-input A,B,C,D;
-output F1;
-wire x1,x2,x3,x4,x5;
-assign x1=(~A)&(~B)&(~C)&(~D);
-assign x2=(A)&(~C)&(~D);
-assign x3=(~B)&(C)&(~D);
-assign x4=(~A)&(B)&(C)&(D);
-assign x5=(B)&(~C)&(D);
-assign F1=x1|x2|x3|x4|x5;
+```
+module booleanfun(a,b,c,d,w,x,y,z,f1,f2);
+input a,b,c,d,w,x,y,z;
+output f1,f2;
+wire adash,bdash,cdash,ddash,ydash,p,q,r,s,t,u;
+not(adash,a);
+not(bdash,b);
+not(cdash,c);
+not(ddash,d);
+not(ydash,y);
+and(p,bdash,ddash);
+and(q,adash,b,d);
+and(r,a,b,cdash);
+or(f1,p,q,r);
+and g1(s,ydash,z);
+and g2(t,x,y);
+and g3(u,w,z);
+or g4(f2,s,t,u);
 endmodule
 
+Developed by:AISHWARYA V RegisterNumber:212223220003
+```
+
 RTL realization
-![image](https://github.com/aishaishwaryav/BOOLEAN_FUNCTION_MINIMIZATION/assets/151565589/4b5078d6-21b4-4613-b63f-326e06965349)
+![image](https://github.com/aishaishwaryav/BOOLEAN_FUNCTION_MINIMIZATION/assets/151565589/c2d382b0-b468-49c4-8c0b-b9ddb6e83593)
+
 
 Truth table
-![image](https://github.com/aishaishwaryav/BOOLEAN_FUNCTION_MINIMIZATION/assets/151565589/6dfad3ec-2904-4ee6-96ab-bf73e924dbfc)
 
 **Timing Diagram**
-![image](https://github.com/aishaishwaryav/BOOLEAN_FUNCTION_MINIMIZATION/assets/151565589/aef1a2ba-b5af-4b61-8902-3c16b7ab9db0)
+![image](https://github.com/aishaishwaryav/BOOLEAN_FUNCTION_MINIMIZATION/assets/151565589/4b4647fd-55f8-46e8-84ff-1be855866949)
+
 
 **Result:**
 
